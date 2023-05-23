@@ -1,0 +1,57 @@
+.redBox{
+    margin: 10px;
+    text-align: justify;
+    background-color: #fc9999;
+    padding: 20px;
+    border-radius:  5px;
+}
+.blueBox{
+    margin: 10px;
+    text-align: justify;
+    background-color: lightblue;
+    padding: 20px;
+    border-radius:  5px;
+}
+.container-slider{
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: -1px 5px 15px black;
+}
+/*Area of images*/
+.wrapper{
+    margin: auto;
+    width: 100%;
+    display: flex;
+    animation: slide 16s infinite;
+}
+img{
+    width: 100%;
+    border-radius: 8px 8px 8px 8px;
+}
+/*Animation activated by keyframes*/
+@keyframes slide{
+    0%{
+        transform: translateX(0);
+   }
+    25%{
+        transform: translateX(0);
+   }
+    30%{
+        transform: translateX(-100%);
+   }
+    50%{
+        transform: translateX(-100%);
+   }
+    55%{
+        transform: translateX(-200%);
+   }
+    75%{
+        transform: translateX(-200%);
+   }
+    80%{
+        transform: translateX(-300%);
+   }
+    100%{
+        transform: translateX(-300%);
+   }
+}
