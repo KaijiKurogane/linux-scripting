@@ -15,40 +15,40 @@ This repository contains a basic web application that can be dockerized using Do
 3. Create a Dockerfile:
 
     Create a file named **`Dockerfile`** in the root directory of the project. Open the **`Dockerfile`** and add the following content:
+    ```
+    # Use an official Nginx runtime as the base image
+    FROM nginx:latest
 
-    ```# Use an official Nginx runtime as the base image
-    ```FROM nginx:latest
+    # Copy the application files to the appropriate location in the container
+    COPY . /usr/share/nginx/html
 
-    ```# Copy the application files to the appropriate location in the container
-    ```COPY . /usr/share/nginx/html
+    # Expose port 80 for the container
+    EXPOSE 80
 
-    ```# Expose port 80 for the container
-    ```EXPOSE 80
-
-    ```# Start Nginx when the container launches
-    ```CMD ["nginx", "-g", "daemon off;"]
-
+    # Start Nginx when the container launches
+    CMD ["nginx", "-g", "daemon off;"]
+    ```
 
 4. Create a Docker Compose file:
 
     Create a file named **`docker-compose.yml`** in the root directory of the project. Open the file and add the following content:
-
-    ```version: '3'
-    ```services:
-    ```web:
-    ```    build:
-    ```    context: .
-    ```    dockerfile: Dockerfile
-    ```    ports:
-    ```    - '8080:80'
-    ```    volumes:
-    ```    - .:/usr/share/nginx/html
-    ```    deploy:
-    ```    resources:
-    ```        limits:
-    ```        cpus: '0.5'
-    ```        memory: '512M'
-
+    ```
+    version: '3'
+    services:
+    web:
+        build:
+        context: .
+        dockerfile: Dockerfile
+        ports:
+        - '8080:80'
+        volumes:
+        - .:/usr/share/nginx/html
+        deploy:
+        resources:
+            limits:
+            cpus: '0.5'
+            memory: '512M'
+    ```
 5. Build and run the Docker container:
 
     Open a terminal or command prompt in the root directory of the project and run the following command:
