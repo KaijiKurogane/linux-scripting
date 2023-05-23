@@ -62,3 +62,8 @@ This repository contains a basic web application that can be dockerized using Do
     Environment variables: To pass configuration values to the web application using environment variables, modify the Dockerfile to include the desired environment variable definitions and pass the values when running **`docker-compose up -d`**.
     Nginx configuration: To customize the Nginx configuration, create an **`nginx.conf`** file in the project directory and modify the Dockerfile to copy it to the appropriate location in the container.
     Container resource management: To limit CPU and memory usage, modify the **`docker-compose.yml`** file by adding the desired resource limits in the **`deploy`** section of the web service.
+    
+    
+    
+# THIS IS THE EXAMPLE RESULT
+![Example Image](DockerWebNginx.png)
